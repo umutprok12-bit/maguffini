@@ -5,14 +5,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up JDK 8
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
         java-version: '8'
         distribution: 'temurin'
     - name: Setup Gradle
-      uses: gradle/gradle-build-action@v2
+      uses: gradle/actions/setup-gradle@v3
       with:
         gradle-version: 4.9
     - name: Setup Decomp Workspace
@@ -20,7 +20,7 @@ jobs:
     - name: Build Mod
       run: gradle build
     - name: Upload Mod Jar
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Supraland-Mod-1.12.2
         path: build/libs/*.jar
