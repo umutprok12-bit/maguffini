@@ -1,24 +1,31 @@
 buildscript {
     repositories {
-        mavenCentral()
         maven { url = 'https://maven.minecraftforge.net/' }
+        mavenCentral()
     }
     dependencies {
-        // Orijinal bozuk sunucu yerine 1.12.2 sorunlarını çözen topluluk yamasını kullanıyoruz
-        classpath('com.anatawa12.forge:ForgeGradle:2.3-1.0.+') { changing = true }
+        // Eski bozuk 2.3 yerine modern ForgeGradle 5 kullanıyoruz
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
     }
 }
-apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'net.minecraftforge.gradle'
 
 version = "1.0"
 group = "com.supraland.macguffin"
 archivesBaseName = "supraland"
 
-sourceCompatibility = targetCompatibility = '1.8'
-compileJava { sourceCompatibility = targetCompatibility = '1.8' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 
 minecraft {
-    version = "1.12.2-14.23.5.2860"
-    runDir = "run"
-    mappings = "snapshot_20171003"
+    // 1.12.2 için modern mapping formatı
+    mappings channel: 'snapshot', version: '20171003-1.12'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Forge'un kendi ana dosyası (userdev aramaz, hatasız yükler)
+    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2860'
 }
