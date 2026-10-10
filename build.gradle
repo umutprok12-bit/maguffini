@@ -1,10 +1,11 @@
 buildscript {
     repositories {
-        maven { url = 'https://maven.minecraftforge.net/' }
         mavenCentral()
+        maven { url = 'https://maven.minecraftforge.net/' }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        // Orijinal bozuk sunucu yerine 1.12.2 sorunlarını çözen topluluk yamasını kullanıyoruz
+        classpath('com.anatawa12.forge:ForgeGradle:2.3-1.0.+') { changing = true }
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
@@ -17,7 +18,8 @@ sourceCompatibility = targetCompatibility = '1.8'
 compileJava { sourceCompatibility = targetCompatibility = '1.8' }
 
 minecraft {
-    version = "1.12.2-14.23.5.2860"
+    // İstediğin 2859 sürümüne geri döndük!
+    version = "1.12.2-14.23.5.2859"
     runDir = "run"
     mappings = "snapshot_20171003"
 }
