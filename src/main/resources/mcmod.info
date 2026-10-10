@@ -1,0 +1,10 @@
+[
+{
+  "modid": "supraland",
+  "name": "Supraland MacGuffin",
+  "description": "Adds the Red MacGuffin sword that shoots growing projectiles.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "authorList": ["You"]
+}
+]

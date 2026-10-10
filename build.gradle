@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        maven { url = 'https://maven.minecraftforge.net/' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+version = "1.0"
+group = "com.supraland.macguffin"
+archivesBaseName = "supraland"
+
+sourceCompatibility = targetCompatibility = '1.8'
+compileJava { sourceCompatibility = targetCompatibility = '1.8' }
+
+minecraft {
+    version = "1.12.2-14.23.5.2859"
+    runDir = "run"
+    mappings = "snapshot_20171003"
+}
