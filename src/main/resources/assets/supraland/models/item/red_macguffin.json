@@ -1,6 +1,9 @@
 {
-  "parent": "item/handheld",
+  "parent": "item/generated",
   "textures": {
-    "layer0": "supraland:items/red_macguffin"
+    "layer0": "supraland:items/GunMI" 
+  },
+  "custom": {
+      "model": "supraland:models/item/Gun2.obj"
   }
 }
