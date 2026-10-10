@@ -1,0 +1,33 @@
+# MTL file - created by a modified js OBJExporter
+
+newmtl GunMI
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 1
+Pr 0.5
+Pds 1
+Pl 1
+Pccns 1-1
+Prfl 0.5
+Pior 1.5
+Pshc 0 0 0
+Pshr 1
+Psi 1
+Psc 1 1 1
+Ka 1 1 1
+Kd 1 1 1
+Ke 0 0 0
+map_Kd GunMI.png
+norm normalMap1.png
+map_Psim specularIntensityMap1.png
+
+newmtl GunEnergy2MI
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 1
+Pr 0.5
+Pds 1
+Pl 1
+Ka 1 1 1
+Kd 0.800000011920929 0.800000011920929 0.800000011920929
+Ke 0 0 0
